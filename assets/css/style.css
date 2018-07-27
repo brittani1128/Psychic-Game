@@ -1,0 +1,15 @@
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: teal;
+}
+
+#score, #guessLeft, #guesses {
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    font-weight:700;
+}
+
+.container {
+    margin:auto;
+}
