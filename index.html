@@ -1,0 +1,44 @@
+<!-- Psychic Game PsuedoCode
+
+Start the game by user guessing alphabet letter -> document.onkeyup = function(event), create userInput variable
+Computer randomly has letter already selected -> array w/ alphabet, Math.random
+If userInput === computerLetter, then game over, wins++, restart game
+If userInput !== computerLetter, decrease #guesses left by 1, display letters guessed so far
+    If number guesses left = 0, game over, losses++, restart game -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Psychic Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+    <script src="assets/javascript/game.js"></script>
+</head>
+<body>
+<div class="container">
+
+
+    <div id="game">
+        <h1>The Psychic Game!</h1>
+        <p>Guess what letter I'm thinking of!</p>
+    </div>
+
+    <div id="score">
+        <p id="wins">Wins: 0</p>
+        <p id="losses">Losses: 0</p>
+    </div>
+
+    <div id="guessLeft">
+        <p>Guesses left: 10</p>
+    </div>
+
+    <div id="guesses">
+        <p>Your guesses so far: </p>
+    </div>
+
+</div>
+    
+</body>
+</html>
