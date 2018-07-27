@@ -32,13 +32,13 @@
 
 //Function to update the letters guessed so far
 function updateGuessedLetters (){
-    document.querySelector("#guesses").innerHTML = "Your guesses so far: " + guessedLetters.join(', ')
+    document.getElementById("guesses").innerHTML = "Your guesses so far: " + guessedLetters.join(', ')
 };
 
 
 //Function to update the number of guesses the user has left
 function updateGuessesLeft() {
-    document.querySelector("#guessLeft").innerHTML = "Guesses left: " + guessesLeft;
+    document.getElementById("guessLeft").innerHTML = "Guesses left: " + guessesLeft;
 };
 
 //Function to generate a new random guess by the computer
@@ -73,27 +73,29 @@ document.onkeyup = function(event) {
     
     //variable to record user guess
     var userGuess = event.key.toLowerCase(); 
+    //adds userGuess to guessedLetters array
     guessedLetters.push(userGuess);
 
-   
+   //If guesses left are not 0, and the user guesses the correct letter, they win
     if (guessesLeft > 0) {
         if (userGuess === letterToGuess) {
         wins++;
         document.querySelector('#wins').innerHTML = "Wins: " + wins;
         alert("You win!");
         restartGame();
-    } else if (userGuess !== computerGuess) {
+    } //If the user guess is incorrect
+    else if (userGuess !== computerGuess) {
         alert("Try again!");
         guessesLeft--;
         updateGuessesLeft();
         updateGuessedLetters();
     }
 
-    }
+    } //If there are no more guesses, game over
     else if (guessesLeft === 0) {
         losses++; 
         document.querySelector('#losses').innerHTML = "Losses: " + losses;
-        alert("You lose!");
+        alert("Game over loser!");
         restartGame();
     }
 
